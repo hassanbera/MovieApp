@@ -3,11 +3,10 @@ import { Movie } from "../movie";
 
  @Component({
     selector:'movies',
-    template:`
+    templateUrl: './movies.component.html',
+    styleUrl:'./movies.component.css'
     
-    <h2>{{"Title: "+getTitle()}}</h2>
-    <div>{{movie.id}}</div>
-    <div>{{movie.name}}</div>`
+
 })
 export class MoviesComponent{
     title='Movies List';
@@ -15,7 +14,8 @@ export class MoviesComponent{
     movie: Movie = {
         id: 1,
         name: 'Spider-Man'
-    }
+    };
 
+movies= ['movie1', 'movie2', 'movie3'];
     getTitle() { return this.title; }
     }
