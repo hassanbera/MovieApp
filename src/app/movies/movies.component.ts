@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { Movie } from "../movie";
+import{Movies} from "../movie.datasource";
 
  @Component({
     selector:'movies',
@@ -16,6 +17,10 @@ export class MoviesComponent{
         name: 'Spider-Man'
     };
 
-movies= ['movie1', 'movie2', 'movie3'];
+movies= Movies;
     getTitle() { return this.title; }
+    removeMovie(id: number) {
+        this.movies = this.movies.filter(movie => movie.id !== id);
+      }
     }
+

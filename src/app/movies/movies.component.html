@@ -1,6 +1,11 @@
-<h2>{{title}}</h2>
-<ul>
-    <li *ngFor="let movie of movies">
-        {{ movie }}
+<div class="card">
+  <div class="card-header">
+    {{ title }}
+  </div>
+  <ul class="list-group list-group-flush">
+    <li *ngFor="let movie of movies" class="list-group-item">
+      <span class="badge bg-primary me-2">{{ movie.id }}</span> {{ movie.name }}
+      <span class="text-danger ms-auto" (click)="removeMovie(movie.id)">x</span>
     </li>
-</ul>
+  </ul>
+</div>
